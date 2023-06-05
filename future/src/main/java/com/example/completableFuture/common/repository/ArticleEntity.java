@@ -1,4 +1,4 @@
-package com.example.future.common.repository;
+package com.example.completableFuture.common.repository;
 
 import lombok.Data;
 

@@ -1,6 +1,6 @@
-package com.example.future.blocking.repository;
+package com.example.completableFuture.blocking.repository;
 
-import com.example.future.common.repository.ArticleEntity;
+import com.example.completableFuture.common.repository.ArticleEntity;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 
@@ -21,7 +21,7 @@ public class ArticleRepository {
 
     @SneakyThrows
     public List<ArticleEntity> findAllByUserId(String userId) {
-        log.info("ArticleRepository.findAllByUserId: {}", userId);
+        log.info("ArticleFutureRepository.findAllByUserId: {}", userId);
         Thread.sleep(1000);
         return articleEntities.stream()
                 .filter(articleEntity -> articleEntity.getUserId().equals(userId))

@@ -1,4 +1,4 @@
-package com.example.future.blocking.repository;
+package com.example.completableFuture.blocking.repository;
 
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
@@ -15,7 +15,7 @@ public class FollowRepository {
 
     @SneakyThrows
     public Long countByUserId(String userId) {
-        log.info("FollowRepository.countByUserId: {}", userId);
+        log.info("FollowFutureRepository.countByUserId: {}", userId);
         Thread.sleep(1000);
         return userFollowCountMap.getOrDefault(userId, 0L);
     }

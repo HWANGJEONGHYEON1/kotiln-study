@@ -1,6 +1,9 @@
-package com.example.future.common.domain;
+package com.example.completableFuture.common.domain;
 
 import lombok.Data;
+
+import java.util.List;
+import java.util.Optional;
 
 @Data
 public class User {

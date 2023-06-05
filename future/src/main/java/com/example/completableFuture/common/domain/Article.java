@@ -1,4 +1,4 @@
-package com.example.future.common.domain;
+package com.example.completableFuture.common.domain;
 
 import lombok.Data;
 

@@ -1,10 +1,9 @@
-package com.example.future.common.domain;
-
+package com.example.completableFuture.common.repository;
 
 import lombok.Data;
 
 @Data
-public class Image {
+public class ImageEntity {
     private final String id;
     private final String name;
     private final String url;

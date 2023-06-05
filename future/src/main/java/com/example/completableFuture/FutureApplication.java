@@ -1,4 +1,4 @@
-package com.example.future;
+package com.example.completableFuture;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,6 +1,6 @@
-package com.example.future.blocking.repository;
+package com.example.completableFuture.blocking.repository;
 
-import com.example.future.common.repository.ImageEntity;
+import com.example.completableFuture.common.repository.ImageEntity;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 
@@ -24,7 +24,7 @@ public class ImageRepository {
 
     @SneakyThrows
     public Optional<ImageEntity> findById(String id) {
-        log.info("ImageRepository.findById: {}", id);
+        log.info("ImageFutureRepository.findById: {}", id);
         Thread.sleep(1000);
         return Optional.ofNullable(imageMap.get(id));
     }

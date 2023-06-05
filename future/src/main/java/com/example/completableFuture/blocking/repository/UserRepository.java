@@ -1,6 +1,6 @@
-package com.example.future.blocking.repository;
+package com.example.completableFuture.blocking.repository;
 
-import com.example.future.common.repository.UserEntity;
+import com.example.completableFuture.common.repository.UserEntity;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 
@@ -17,8 +17,8 @@ public class UserRepository {
     }
 
     @SneakyThrows
-    public Optional<UserEntity> findById(String userId) throws InterruptedException {
-        log.info("UserRepository.findById: {}", userId);
+    public Optional<UserEntity> findById(String userId) {
+        log.info("UserFutureRepository.findById: {}", userId);
         Thread.sleep(1000);
         var user = userMap.get(userId);
         return Optional.ofNullable(user);
