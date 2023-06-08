@@ -38,6 +38,7 @@ public class SimpleNamedSubscriber<T> implements Flow.Subscriber<T> {
     }
 
     public void cancel() {
+        log.info("cancel");
         this.subscription.cancel();
     }
 }

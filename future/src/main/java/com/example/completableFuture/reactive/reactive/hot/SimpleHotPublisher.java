@@ -1,4 +1,4 @@
-package com.example.completableFuture.reactive.reactive;
+package com.example.completableFuture.reactive.reactive.hot;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -43,6 +43,7 @@ public class SimpleHotPublisher implements Flow.Publisher<Integer> {
         subscriber.onSubscribe(subscription);
     }
 
+
     private class SimpleHotSubscription implements Flow.Subscription {
 
         private int offset;
@@ -60,27 +61,23 @@ public class SimpleHotPublisher implements Flow.Publisher<Integer> {
         public void request(long n) {
             requiredOffset += n;
 
-            executorService.submit(() -> {
-                while (offset < requiredOffset && offset < numbers.size()) {
-                    var item = numbers.get(offset);
-                    subscriber.onNext(item);
-                    offset++;
-                }
-            });
+            onNextWhilePossible();
         }
 
         @Override
         public void cancel() {
             this.subscriber.onComplete();
 
-            if (subscriptions.contains(this)) {
-
-                subscriptions.remove(this);
-            }
+            subscriptions.remove(this);
             executorService.shutdown();
+            log.info("cancel");
         }
 
         public void wakeup() {
+            onNextWhilePossible();
+        }
+
+        private void onNextWhilePossible() {
             executorService.submit(() -> {
                 while (offset < requiredOffset && offset < numbers.size()) {
                     var item = numbers.get(offset);
