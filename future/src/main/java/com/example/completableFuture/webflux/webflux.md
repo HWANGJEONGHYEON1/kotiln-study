@@ -47,3 +47,6 @@
       - EventExecutor 있다면..?
         - Next context가 다른 스레드풀에서 동작해야하는구나 판단
         - `직접 이벤트 처리르하지 않고 executor.execute로 taskqueue에 넣고 eventLoop 스레드는 복귀.`
+  
+### ThreadLocal
+- 
