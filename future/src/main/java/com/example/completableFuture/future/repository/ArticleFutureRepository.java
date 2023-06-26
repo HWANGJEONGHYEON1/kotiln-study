@@ -23,7 +23,7 @@ public class ArticleFutureRepository {
 
     @SneakyThrows
     public CompletableFuture<List<ArticleEntity>> findAllByUserId(String userId) {
-        log.info("ArticleFutureRepository.findAllByUserId: {}", userId);
+        log.info("ArticleReactorRepository.findAllByUserId: {}", userId);
 
         return CompletableFuture.supplyAsync(() -> {
             try {

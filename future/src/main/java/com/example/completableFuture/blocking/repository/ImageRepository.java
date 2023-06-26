@@ -24,7 +24,7 @@ public class ImageRepository {
 
     @SneakyThrows
     public Optional<ImageEntity> findById(String id) {
-        log.info("ImageFutureRepository.findById: {}", id);
+        log.info("ImageReactorRepository.findById: {}", id);
         Thread.sleep(1000);
         return Optional.ofNullable(imageMap.get(id));
     }

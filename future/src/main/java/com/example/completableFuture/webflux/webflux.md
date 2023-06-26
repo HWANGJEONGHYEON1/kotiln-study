@@ -48,5 +48,15 @@
         - Next context가 다른 스레드풀에서 동작해야하는구나 판단
         - `직접 이벤트 처리르하지 않고 executor.execute로 taskqueue에 넣고 eventLoop 스레드는 복귀.`
   
-### ThreadLocal
-- 
+### Context
+- 파이프라인 내부 어디에서든지 접근 가능한 k, v 저장소
+- 특정 key의 value에 접근하고 k의 v를 수정할 수 있는 수단을 제공
+- map과 유사
+- 읽기 전용인 ContextView와 쓰기를 할 수 있는 Context로 구분
+  - contextWrite
+    - Context를 인자로 받고, Context를 반환하는 함수형 인터페이스 제공
+    - Context 값을 추가하거나 변경, 삭제 가능
+    - Context immutable하기 때문에 스레드 세이프하다.
+- defer
+  - publisher를 생성하는 Consumer를 인자로받아 publisher 생성
+  - 생성된 publisher의 이벤틀르 아래로 전달

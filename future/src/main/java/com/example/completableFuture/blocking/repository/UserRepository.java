@@ -18,7 +18,7 @@ public class UserRepository {
 
     @SneakyThrows
     public Optional<UserEntity> findById(String userId) {
-        log.info("UserFutureRepository.findById: {}", userId);
+        log.info("UserReactorRepository.findById: {}", userId);
         Thread.sleep(1000);
         var user = userMap.get(userId);
         return Optional.ofNullable(user);

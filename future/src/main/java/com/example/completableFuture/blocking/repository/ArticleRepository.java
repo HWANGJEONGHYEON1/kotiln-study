@@ -21,7 +21,7 @@ public class ArticleRepository {
 
     @SneakyThrows
     public List<ArticleEntity> findAllByUserId(String userId) {
-        log.info("ArticleFutureRepository.findAllByUserId: {}", userId);
+        log.info("ArticleReactorRepository.findAllByUserId: {}", userId);
         Thread.sleep(1000);
         return articleEntities.stream()
                 .filter(articleEntity -> articleEntity.getUserId().equals(userId))

@@ -15,7 +15,7 @@ public class FollowRepository {
 
     @SneakyThrows
     public Long countByUserId(String userId) {
-        log.info("FollowFutureRepository.countByUserId: {}", userId);
+        log.info("FollowReactorRepository.countByUserId: {}", userId);
         Thread.sleep(1000);
         return userFollowCountMap.getOrDefault(userId, 0L);
     }
