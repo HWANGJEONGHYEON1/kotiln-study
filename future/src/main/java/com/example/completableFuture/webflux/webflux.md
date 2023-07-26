@@ -60,3 +60,7 @@
 - defer
   - publisher를 생성하는 Consumer를 인자로받아 publisher 생성
   - 생성된 publisher의 이벤틀르 아래로 전달
+
+### HttpHandler
+- ServerHttpRequest, ServerHttpResponse 인자로 받고 
+- 응답을 돌려줘야하는 시점을 반환하는 함수형 인터페이스
